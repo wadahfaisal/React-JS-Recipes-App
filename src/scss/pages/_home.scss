@@ -1,0 +1,45 @@
+main.home-page {
+  .hero {
+    height: 40vh;
+    background: url(../assets/main.jpeg);
+    border-radius: $borderRadius;
+    margin-bottom: 2rem;
+    position: relative;
+
+    &-container {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: $borderRadius;
+      @include flex(center, center);
+    }
+
+    &-text {
+      text-align: center;
+      color: $white;
+    }
+  }
+
+  .recipes-container {
+    display: grid;
+    gap: 2rem 1rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    .hero {
+      &-text h1 {
+        font-size: 4rem;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  @media screen and (min-width: 992px) {
+    .recipes-container {
+      grid-template-columns: 200px 1fr;
+    }
+  }
+}

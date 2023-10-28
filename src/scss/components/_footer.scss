@@ -1,0 +1,15 @@
+footer.main-footer {
+  @include flex(center, center);
+  height: 4rem;
+  background: $black;
+  color: $white;
+
+  p {
+    margin-bottom: 0;
+  }
+
+  .footer-logo,
+  a {
+    color: $primary-500;
+  }
+}

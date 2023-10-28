@@ -1,0 +1,40 @@
+article.recipe-card {
+  a {
+    display: block;
+  }
+
+  .recipe-img {
+    height: 15rem;
+    border-radius: $borderRadius;
+    margin-bottom: 1rem;
+  }
+
+  h5 {
+    color: $grey-700;
+    margin-bottom: 0;
+    line-height: 1;
+  }
+
+  p {
+    color: $grey-500;
+    margin-top: 0.5rem;
+    line-height: 1;
+    margin-bottom: 0;
+    letter-spacing: $letterSpacing;
+  }
+
+  @media screen and (min-width: 576px) {
+    .recipe-img {
+      height: 10rem;
+    }
+
+    p {
+      font-size: 0.85rem;
+    }
+  }
+  @media screen and (min-width: 1200px) {
+    h5 {
+      font-size: 1.15rem;
+    }
+  }
+}

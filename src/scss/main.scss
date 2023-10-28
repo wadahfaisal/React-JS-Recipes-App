@@ -1,0 +1,29 @@
+@import "normalize";
+@import "variables";
+@import "global_styles";
+@import "mixins";
+
+// Importing Components
+@import "./components/navbar";
+@import "./components/footer";
+@import "./components/recipe_card";
+@import "./components/recipes_list";
+@import "./components/tags";
+
+// Importing Pages
+@import "./pages/home";
+@import "./pages/error";
+@import "./pages/recipes";
+@import "./pages/about";
+@import "./pages/contact";
+@import "./pages/tags";
+@import "./pages/single_recipe_page";
+
+// Shared Styles
+.page {
+  width: 90vw;
+  max-width: $max-width;
+  margin: 0 auto;
+  padding-top: 2rem;
+  min-height: calc(100vh - (6rem + 4rem));
+}

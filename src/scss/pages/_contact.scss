@@ -1,0 +1,25 @@
+.contact-page {
+  .contact-container {
+    display: grid;
+    gap: 2rem 3rem;
+    padding-bottom: 3rem;
+
+    .contact-form {
+      width: 100%;
+      margin: 0;
+    }
+  }
+
+  .featured-recipes {
+    .featured-title {
+      text-align: center;
+    }
+  }
+
+  @media screen and (min-width: 992px) {
+    .contact-container {
+      grid-template-columns: 1fr 450px;
+      align-items: center;
+    }
+  }
+}

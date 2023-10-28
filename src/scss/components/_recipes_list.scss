@@ -1,0 +1,13 @@
+.recipes-list {
+  display: grid;
+  gap: 2rem 1rem;
+  padding-bottom: 3rem;
+
+  @media screen and (min-width: 576px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (min-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

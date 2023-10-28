@@ -1,0 +1,33 @@
+.tags-container {
+  order: 1;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 3rem;
+
+  h4 {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+  .tags-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    a {
+      text-transform: capitalize;
+      display: block;
+      color: $grey-500;
+      transition: $transition;
+
+      &:hover {
+        color: $primary-500;
+      }
+    }
+  }
+  @media screen and (min-width: 992px) {
+    order: 0;
+
+    .tags-list {
+      grid-template-columns: 1fr;
+    }
+  }
+}

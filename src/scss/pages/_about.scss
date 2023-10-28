@@ -1,0 +1,33 @@
+.about-page {
+  .info {
+    display: grid;
+    gap: 2rem 4rem;
+    padding-bottom: 3rem;
+
+    h2 {
+      text-transform: none;
+      font-weight: bold;
+    }
+
+    .about-img {
+      border-radius: $borderRadius;
+      height: 300px;
+    }
+  }
+
+  @media screen and (min-width: 992px) {
+    .info {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 400px;
+      align-items: center;
+    }
+    .about-img {
+      height: 100%;
+    }
+  }
+  .featured-recipes {
+    .featured-title {
+      text-align: center;
+    }
+  }
+}
