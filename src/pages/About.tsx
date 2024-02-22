@@ -1,5 +1,5 @@
 import { recipes } from "../data/recipes";
-import { RecipeCard } from "../components";
+import { FeaturedRecipes } from "../components";
 import { Link } from "react-router-dom";
 import aboutImg from "../assets/about.jpeg";
 
@@ -24,14 +24,7 @@ const About: React.FC = () => {
         </article>
         <img src={aboutImg} alt="pouring salt" className="img about-img" />
       </section>
-      <section className="featured-recipes">
-        <h5 className="featured-title">look at this awesomesouce</h5>
-        <div className="recipes-list">
-          {recipes.slice(0, 3).map((recipe) => {
-            return <RecipeCard key={recipe.id} {...recipe} />;
-          })}
-        </div>
-      </section>
+      <FeaturedRecipes allRecipes={false} />
     </main>
   );
 };
