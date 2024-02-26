@@ -1,16 +1,22 @@
 import { Link } from "react-router-dom";
-
 import { allTags, tagCount } from "../data/tags";
 import { useState, useEffect } from "react";
 import axios from "axios";
-const Tags: React.FC = () => {
-  const [tags, setTags] = useState(allTags);
+import { tagList } from "../data/tags";
+
+const Tags = () => {
+  // const [tags, setTags] = useState(allTags);
   const [data, setData] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       try {
         const res = await axios.get(
-          "http://www.themealdb.com/api/json/v1/1/categories.php"
+          "/api/recipes/complexSearch?type=main course",
+          {
+            params: {
+              apiKey: "c3c7873a87624d9c8ce50026c91cac45",
+            },
+          }
         );
         setData(res.data.categories);
         console.log(res.data);
@@ -18,19 +24,17 @@ const Tags: React.FC = () => {
         console.log(error);
       }
     };
-
-    fetchData();
+    // fetchData();
   }, []);
 
   return (
     <div className="tags-container">
       <h4>recipes</h4>
       <div className="tags-list">
-        {data.map((category, index) => {
-          const { strCategory } = category;
+        {tagList.map((tag, index) => {
           return (
-            <Link to={`/tags/${strCategory}`} key={index}>
-              {strCategory}
+            <Link to={`/tags/${tag}`} key={index}>
+              {tag}
             </Link>
           );
         })}

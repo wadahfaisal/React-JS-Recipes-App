@@ -8,33 +8,22 @@ import { useParams, Link } from "react-router-dom";
 import { recipes, Recipe } from "../data/recipes";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { RecipeContent, RecipeTags, RelatedRecipes } from "../components";
 
 const SingleRecipe: React.FC = () => {
   const { id } = useParams();
   const [recipe, setRecipe] = useState({});
 
   useEffect(() => {
-    // const fetchData = async () => {
-    //   try {
-    //     const res = await axios.get(
-    //       `http://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`
-    //     );
-    //     setRecipe(res.data.meals[0]);
-    //     console.log(res.data.meals[0]);
-    //   } catch (error) {
-    //     console.log(error);
-    //   }
-    // };
     const fetchData = async () => {
       try {
-        const res = await fetch(
-          `http://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`,
-          {
-            method: "GET",
-          }
-        );
-        const data = await res.json();
-        setRecipe(data.meals[0]);
+        const res = await axios.get(`/api/recipes/${id}/information`, {
+          params: {
+            apiKey: "c3c7873a87624d9c8ce50026c91cac45",
+          },
+        });
+        setRecipe(res.data);
+        console.log(res.data);
       } catch (error) {
         console.log(error);
       }
@@ -43,42 +32,25 @@ const SingleRecipe: React.FC = () => {
     fetchData();
   }, []);
 
-  return;
-
   const {
-    strArea,
-    strCategory,
-    strInstructions: instruction,
-    strMeal: name,
-    strMealThumb: image,
-    strYoutube,
-    strTags,
+    title,
+    image,
+    summary,
+    dishTypes,
+    extendedIngredients,
+    readyInMinutes,
+    servings,
   } = recipe;
-
-  const extractProperties = (array, items: string) => {
-    let properties = [];
-    for (let i = 1; i <= 20; i++) {
-      const property = array[items + i];
-
-      if (property !== "" && property !== " ") {
-        properties.push(property);
-      }
-    }
-    return properties;
-  };
-
-  const ingredients = extractProperties(recipe, "strIngredient");
-  const measures = extractProperties(recipe, "strMeasure");
-  const instructions = recipe.strInstructions?.split(".");
 
   return (
     <main className="page recipe-page">
       <div>
         <section className="recipe-hero">
-          <img src={image} alt={name} className="img recipe-hero-img" />
+          <img src={image} alt={title} className="img recipe-hero-img" />
           <article className="recipe-info">
-            <h2>{name}</h2>
-            <p>{instruction}</p>
+            <h2>{title}</h2>
+            {/* <p>{strInstructions?.substring(0, 500)}...</p> */}
+            <p>{summary?.substring(0, 500)}...</p>
             <div className="recipe-icons">
               <article>
                 <FontAwesomeIcon icon={clock1} className="fas" />
@@ -93,59 +65,14 @@ const SingleRecipe: React.FC = () => {
               <article>
                 <FontAwesomeIcon icon={faUserFriends} className="fas" />
                 <h5>servings</h5>
-                {/* <p>{servings} servings</p> */}
+                <p>{servings} servings</p>
               </article>
             </div>
-            <div className="recipe-tags">
-              Tags:
-              {/* {tags.map((tag, index) => {
-                return (
-                  <Link to="/tags/123" key={index}>
-                    {tag}
-                  </Link>
-                );
-              })} */}
-            </div>
+            {/* <RecipeTags /> */}
           </article>
         </section>
-        <section className="recipe-content">
-          <article>
-            <h4>instructions</h4>
-            {instructions.map((instruction, index) => {
-              return (
-                <div className="single-instruction" key={index}>
-                  <header>
-                    <p>step {index + 1}</p>
-                    <div></div>
-                  </header>
-                  <p>{instruction}</p>
-                </div>
-              );
-            })}
-          </article>
-          <article className="second-column">
-            <div>
-              <h4>ingredients</h4>
-              {ingredients.map((ingredient, index) => {
-                return (
-                  <p className="single-ingredient" key={index}>
-                    {ingredient}
-                  </p>
-                );
-              })}
-            </div>
-            <div>
-              <h4>tools</h4>
-              {/* {tools.map((tool, index) => {
-                return (
-                  <p className="single-tool" key={index}>
-                    {tool}
-                  </p>
-                );
-              })} */}
-            </div>
-          </article>
-        </section>
+        <RecipeContent ingredients={extendedIngredients} recipeId={id} />
+        <RelatedRecipes />
       </div>
     </main>
   );

@@ -6,6 +6,11 @@ import Tags from "./Tags";
 import FeaturedRecipes from "./FeaturedRecipes";
 import ContactInfo from "./ContactInfo";
 import ContactForm from "./ContactForm";
+import RecipeContent from "./RecipeContent";
+import RecipeInstructions from "./RecipeInstructions";
+import RecipeIngredients from "./RecipeIngredients";
+import RecipeTags from "./RecipeTags";
+import RelatedRecipes from "./RelatedRecipes";
 
 export {
   Navbar,
@@ -16,4 +21,9 @@ export {
   FeaturedRecipes,
   ContactInfo,
   ContactForm,
+  RecipeContent,
+  RecipeInstructions,
+  RecipeIngredients,
+  RecipeTags,
+  RelatedRecipes,
 };

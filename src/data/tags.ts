@@ -15,6 +15,23 @@ export const tagCount = (myTag: string) => {
   return count;
 };
 
+export const tagList = [
+  "main course",
+  "side dish",
+  "dessert",
+  "appetizer",
+  "salad",
+  "bread",
+  "breakfast",
+  "soup",
+  "beverage",
+  "sauce",
+  "marinade",
+  "fingerfood",
+  "snack",
+  "drink",
+];
+
 // interface Tag {
 //   id: number;
 //   name: string;

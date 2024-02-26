@@ -1,0 +1,24 @@
+section.related-recipes {
+  .related-container {
+    display: flex;
+    gap: 1.5rem;
+  }
+  .related-recipe {
+    img {
+      height: 170px;
+      border-radius: $borderRadius;
+    }
+    h5 {
+      margin-bottom: 0.2rem;
+      // display: block;
+      color: $grey-700;
+    }
+    p {
+      color: $grey-500;
+      margin-top: 0.5rem;
+      line-height: 1;
+      margin-bottom: 0;
+      letter-spacing: $letterSpacing;
+    }
+  }
+}

@@ -1,9 +1,8 @@
-import { recipes } from "../data/recipes";
 import { FeaturedRecipes } from "../components";
 import { Link } from "react-router-dom";
 import aboutImg from "../assets/about.jpeg";
 
-const About: React.FC = () => {
+const About = () => {
   return (
     <main className="page about-page">
       <section className="info">
@@ -24,7 +23,7 @@ const About: React.FC = () => {
         </article>
         <img src={aboutImg} alt="pouring salt" className="img about-img" />
       </section>
-      <FeaturedRecipes allRecipes={false} />
+      <FeaturedRecipes />
     </main>
   );
 };

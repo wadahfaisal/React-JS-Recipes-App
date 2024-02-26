@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { allTags as tags, tagCount } from "../data/tags";
+import { tagList } from "../data/tags";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -9,7 +10,8 @@ const Tags: React.FC = () => {
     const fetchData = async () => {
       try {
         const res = await axios.get(
-          "http://www.themealdb.com/api/json/v1/1/categories.php"
+          // "http://www.themealdb.com/api/json/v1/1/categories.php"
+          "/api/categories.php"
         );
         setData(res.data.categories);
       } catch (error) {
@@ -17,22 +19,20 @@ const Tags: React.FC = () => {
       }
     };
 
-    fetchData();
+    // fetchData();
   }, []);
 
-  let categories = [];
+  // let categories = [];
 
-  data.forEach((category) => {
-    categories.push(category.strCategory);
-  });
+  // data.forEach((category) => {
+  //   categories.push(category.strCategory);
+  // });
 
-  console.log(categories);
+  // console.log(categories);
   return (
     <main className="page tags-page">
       <section className="tags-wrapper">
-        
-
-        {categories.map((tag, index) => {
+        {tagList.map((tag, index) => {
           return (
             <Link to={`/tags/${tag}`} key={index} className="tag">
               <h5>{tag}</h5>
