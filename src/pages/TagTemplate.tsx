@@ -1,6 +1,5 @@
 import { RecipesList } from "../components";
 import { useParams } from "react-router-dom";
-import { recipes } from "../data/recipes";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
