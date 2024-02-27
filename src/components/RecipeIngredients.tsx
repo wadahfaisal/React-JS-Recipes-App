@@ -5,9 +5,14 @@ const RecipeIngredients = ({ ingredients }: Props) => {
     <article className="second-column">
       <div>
         <h4>ingredients & measures</h4>
-        {ingredients?.map((ingredient, index) => {
-          const { id, aisle, image, name, originalName, amount, unit } =
-            ingredient;
+        {ingredients?.map((ingredient) => {
+          const {
+            id,
+            name,
+            amount,
+            unit,
+            // , aisle, image,  originalName
+          } = ingredient;
           return (
             <p className="single-ingredient" key={id}>
               {name}: {amount} {unit}

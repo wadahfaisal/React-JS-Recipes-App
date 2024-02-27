@@ -22,7 +22,11 @@ const RecipeInstructions = ({ recipeId }: Props) => {
     <article>
       <h4>instructions</h4>
       {instructions?.map((instruction) => {
-        const { number, step, equipment } = instruction;
+        const {
+          number,
+          step,
+          // , equipment
+        } = instruction;
 
         return (
           <div className="single-instruction" key={number}>

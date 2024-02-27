@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import {
   RecipeContent,
   RecipeHero,
-  RecipeTags,
+  // RecipeTags,
   RelatedRecipes,
 } from "../components";
 
@@ -26,21 +26,14 @@ const SingleRecipe: React.FC = () => {
     fetchData();
   }, []);
 
-  const {
-    title,
-    image,
-    summary,
-    dishTypes,
-    extendedIngredients,
-    readyInMinutes,
-    servings,
-  } = recipe;
-
   return (
     <main className="page recipe-page">
       <div>
         <RecipeHero recipe={recipe} />
-        <RecipeContent ingredients={extendedIngredients} recipeId={id} />
+        <RecipeContent
+          ingredients={recipe.extendedIngredients}
+          recipeId={id as string}
+        />
         <RelatedRecipes />
       </div>
     </main>

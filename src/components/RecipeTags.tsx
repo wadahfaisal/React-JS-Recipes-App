@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 const RecipeTags = () => {
   return (
     <div className="recipe-tags">

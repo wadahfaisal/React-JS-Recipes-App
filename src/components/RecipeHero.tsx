@@ -6,7 +6,7 @@ import {
 import { faClock as clock2 } from "@fortawesome/free-regular-svg-icons";
 import { RecipeHeroProps as Props } from "../types/porpsTypes";
 import recipeIcons from "../utils/recipeIcons";
-import { RecipeTags } from ".";
+// import { RecipeTags } from ".";
 
 const RecipeHero = ({ recipe }: Props) => {
   const { image, title, summary, servings } = recipe;
@@ -19,7 +19,12 @@ const RecipeHero = ({ recipe }: Props) => {
         <p>{summary?.substring(0, 500)}...</p>
         <div className="recipe-icons">
           {recipeIcons.map((recipeIcon) => {
-            const { id, text, icon, prefix } = recipeIcon;
+            const {
+              id,
+              text,
+              icon,
+              // , prefix
+            } = recipeIcon;
 
             return (
               <article key={id}>

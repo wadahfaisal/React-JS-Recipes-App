@@ -14,7 +14,7 @@ export type NavLinksProps = {
 
 export type RecipeContentProps = {
   ingredients: ExtendedIngredient[];
-  recipeId: number;
+  recipeId: string;
 };
 
 export type RecipeCardProps = {
@@ -31,5 +31,5 @@ export type RecipeIngredientsProps = {
 };
 
 export type RecipeInstructionsProps = {
-  recipeId: number;
+  recipeId: string;
 };

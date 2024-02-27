@@ -7,8 +7,8 @@ const RecipeCard = ({
   image,
   readyInMinutes,
   servings,
-  cookingMinutes,
-}: Props) => {
+}: // cookingMinutes,
+Props) => {
   return (
     <article className="recipe-card">
       <Link to={`/single-recipe/${id}`}>
