@@ -11,6 +11,8 @@ import RecipeInstructions from "./RecipeInstructions";
 import RecipeIngredients from "./RecipeIngredients";
 import RecipeTags from "./RecipeTags";
 import RelatedRecipes from "./RelatedRecipes";
+import RecipeHero from "./RecipeHero";
+import NavLinks from "./NavLinks";
 
 export {
   Navbar,
@@ -26,4 +28,6 @@ export {
   RecipeIngredients,
   RecipeTags,
   RelatedRecipes,
+  RecipeHero,
+  NavLinks,
 };

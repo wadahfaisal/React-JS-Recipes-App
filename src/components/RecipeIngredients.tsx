@@ -1,4 +1,6 @@
-const RecipeIngredients = ({ ingredients }) => {
+import { RecipeIngredientsProps as Props } from "../types/porpsTypes";
+
+const RecipeIngredients = ({ ingredients }: Props) => {
   return (
     <article className="second-column">
       <div>

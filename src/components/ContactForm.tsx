@@ -1,4 +1,4 @@
-const ContactForm: React.FC = () => {
+const ContactForm = () => {
   return (
     <article>
       <form className="form contact-form">

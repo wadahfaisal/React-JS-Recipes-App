@@ -1,6 +1,6 @@
 import { ContactForm, ContactInfo, FeaturedRecipes } from "../components";
 
-const Contact: React.FC = () => {
+const Contact = () => {
   return (
     <main className="page contact-page">
       <section className="contact-container">
@@ -8,7 +8,7 @@ const Contact: React.FC = () => {
         <ContactForm />
       </section>
       <section className="featured-recipes">
-        <FeaturedRecipes allRecipes={false} />
+        <FeaturedRecipes />
       </section>
     </main>
   );

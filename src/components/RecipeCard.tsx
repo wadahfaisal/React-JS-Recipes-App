@@ -1,12 +1,5 @@
 import { Link } from "react-router-dom";
-type Props = {
-  id: number;
-  title: string;
-  image: string;
-  readyInMinutes?: number;
-  servings?: number;
-  cookingMinutes?: number;
-};
+import { RecipeCardProps as Props } from "../types/porpsTypes";
 
 const RecipeCard = ({
   id,

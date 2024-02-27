@@ -1,6 +1,4 @@
-import React from "react";
-
-const Error: React.FC = () => {
+const Error = () => {
   return (
     <main className="error-page">
       <section>

@@ -1,19 +1,14 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
+import { RecipeInstructionsProps as Props } from "../types/porpsTypes";
+import customFetch from "../utils/axios";
+import { InstuctionsStep as Instruction } from "../types/types";
 
-const RecipeInstructions = ({ recipeId }) => {
-  const [instructions, setInstructions] = useState();
+const RecipeInstructions = ({ recipeId }: Props) => {
+  const [instructions, setInstructions] = useState([] as Instruction[]);
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(
-          `/api/recipes/${recipeId}/analyzedInstructions`,
-          {
-            params: {
-              apiKey: "c3c7873a87624d9c8ce50026c91cac45",
-            },
-          }
-        );
+        const res = await customFetch.get(`/${recipeId}/analyzedInstructions`);
         setInstructions(res.data[0].steps);
       } catch (error) {
         console.log(error);

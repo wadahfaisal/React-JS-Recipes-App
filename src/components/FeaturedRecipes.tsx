@@ -1,19 +1,16 @@
 import { RecipeCard } from ".";
 import { useEffect, useState } from "react";
-import axios from "axios";
+import { Recipe } from "../types/types";
+import customFetch from "../utils/axios";
 
 const FeaturedRecipes = () => {
-  const [recipes, setRecipes] = useState([]);
+  const [recipes, setRecipes] = useState([] as Recipe[]);
   useEffect(() => {
     const fetchData = async () => {
+      const numOfRecipes = 3;
       try {
-        const res = await axios.get(
-          "/api/recipes/random?limitLicense=true&include-tags=vegetarian&number=3",
-          {
-            params: {
-              apiKey: "c3c7873a87624d9c8ce50026c91cac45",
-            },
-          }
+        const res = await customFetch.get(
+          `/api/recipes/random?limitLicense=true&include-tags=vegetarian&number=${numOfRecipes}`
         );
         setRecipes(res.data.recipes);
       } catch (error) {

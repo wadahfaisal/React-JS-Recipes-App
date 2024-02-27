@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import logo from "../assets/logo.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAlignJustify } from "@fortawesome/free-solid-svg-icons";
+import { NavLinks } from ".";
 
 const Navbar: React.FC = () => {
   const [showSidebar, setShowsidebar] = useState(false);
@@ -29,25 +30,7 @@ const Navbar: React.FC = () => {
             <FontAwesomeIcon className="fas" icon={faAlignJustify} />
           </button>
         </div>
-        <div className={showSidebar ? "nav-links show-links" : "nav-links"}>
-          <Link to="/" className="nav-link">
-            home
-          </Link>
-          <Link to="/about" className="nav-link">
-            about
-          </Link>
-          <Link to="/tags" className="nav-link">
-            tags
-          </Link>
-          <Link to="/recipes" className="nav-link">
-            recipes
-          </Link>
-          <div className="nav-link contact-link">
-            <Link to="/contact" className="btn">
-              contact
-            </Link>
-          </div>
-        </div>
+        <NavLinks showSidebar={showSidebar} />
       </div>
     </nav>
   );

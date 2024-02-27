@@ -1,28 +1,22 @@
 import { RecipesList, Tags } from "../components";
-import { recipes } from "../data/recipes";
 import { useEffect, useState } from "react";
-import axios from "axios";
+import customFetch from "../utils/axios";
 
 const Home = () => {
   const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
+      const numOfRecipes = 6;
       try {
-        const res = await axios.get(
-          "/api/recipes/random?limitLicense=true&include-tags=vegetarian&number=6",
-          {
-            params: {
-              apiKey: "c3c7873a87624d9c8ce50026c91cac45",
-            },
-          }
+        const res = await customFetch.get(
+          `/random?limitLicense=true&include-tags=vegetarian&number=${numOfRecipes}`
         );
         setRecipes(res.data.recipes);
       } catch (error) {
         console.log(error);
       }
     };
-
     fetchData();
   }, []);
 
@@ -36,7 +30,6 @@ const Home = () => {
           </div>
         </div>
       </header>
-
       <section className="recipes-container">
         <Tags />
         <RecipesList recipes={recipes} />
