@@ -9,7 +9,7 @@ export default defineConfig({
 
   server: {
     proxy: {
-      "/api": {
+      "https://api.spoonacular.com": {
         // target: "https://www.themealdb.com/api/json/v1/1",
         target: "https://api.spoonacular.com",
         changeOrigin: true,
