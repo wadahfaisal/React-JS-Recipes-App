@@ -13,6 +13,7 @@ import RecipeTags from "./RecipeTags";
 import RelatedRecipes from "./RelatedRecipes";
 import RecipeHero from "./RecipeHero";
 import NavLinks from "./NavLinks";
+import Loading from "./Loading";
 
 export {
   Navbar,
@@ -30,4 +31,5 @@ export {
   RelatedRecipes,
   RecipeHero,
   NavLinks,
+  Loading,
 };
