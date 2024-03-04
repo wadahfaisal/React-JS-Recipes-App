@@ -11,7 +11,7 @@ export default defineConfig({
     proxy: {
       "/api": {
         // target: "https://www.themealdb.com/api/json/v1/1",
-        target: "https://api.spoonacular.com",
+        // target: "https://api.spoonacular.com",
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ""),
       },
