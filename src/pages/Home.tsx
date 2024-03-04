@@ -13,6 +13,7 @@ const Home = () => {
           `/random?limitLicense=true&include-tags=vegetarian&number=${numOfRecipes}`
         );
         setRecipes(res.data.recipes);
+        console.log(res.data.recipes);
       } catch (error) {
         console.log(error);
       }
