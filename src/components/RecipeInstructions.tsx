@@ -8,7 +8,9 @@ const RecipeInstructions = ({ recipeId }: Props) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await customFetch.get(`/${recipeId}/analyzedInstructions`);
+        const res = await customFetch.get(
+          `/recipes/${recipeId}/analyzedInstructions`
+        );
         setInstructions(res.data[0].steps);
       } catch (error) {
         console.log(error);

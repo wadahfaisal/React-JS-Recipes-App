@@ -16,7 +16,7 @@ const SingleRecipe: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await customFetch.get(`/${id}/information`);
+        const res = await customFetch.get(`/recipes/${id}/information`);
         setRecipe(res.data);
       } catch (error) {
         console.log(error);

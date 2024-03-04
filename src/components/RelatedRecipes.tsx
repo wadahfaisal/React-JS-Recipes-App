@@ -11,7 +11,7 @@ const RelatedRecipes = () => {
       const numOfRecipes = 3;
       try {
         const res = await customFetch.get(
-          `/random?limitLicense=true&include-tags=vegetarian&number=${numOfRecipes}`
+          `/recipes/random?limitLicense=true&include-tags=vegetarian&number=${numOfRecipes}`
         );
         setRecipes(res.data.recipes);
       } catch (error) {
