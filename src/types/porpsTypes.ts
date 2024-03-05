@@ -10,6 +10,7 @@ export type RecipeHeroProps = {
 
 export type NavLinksProps = {
   showSidebar: boolean;
+  setShowSidebar: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 export type RecipeContentProps = {

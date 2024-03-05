@@ -30,7 +30,7 @@ const Navbar: React.FC = () => {
             <FontAwesomeIcon className="fas" icon={faAlignJustify} />
           </button>
         </div>
-        <NavLinks showSidebar={showSidebar} />
+        <NavLinks showSidebar={showSidebar} setShowSidebar={setShowsidebar} />
       </div>
     </nav>
   );
