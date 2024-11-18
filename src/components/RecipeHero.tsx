@@ -1,12 +1,12 @@
+import { faClock as clock2 } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { RecipeHeroProps as Props } from "../types/porpsTypes";
+import recipeIcons from "../utils/recipeIcons";
+// import { RecipeTags } from ".";
 import {
   faClock as clock1,
   faUserFriends,
 } from "@fortawesome/free-solid-svg-icons";
-import { faClock as clock2 } from "@fortawesome/free-regular-svg-icons";
-import { RecipeHeroProps as Props } from "../types/porpsTypes";
-import recipeIcons from "../utils/recipeIcons";
-// import { RecipeTags } from ".";
 
 const RecipeHero = ({ recipe }: Props) => {
   const { image, title, summary, servings } = recipe;

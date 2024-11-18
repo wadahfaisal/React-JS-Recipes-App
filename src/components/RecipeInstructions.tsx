@@ -1,24 +1,8 @@
-import { useEffect, useState } from "react";
 import { RecipeInstructionsProps as Props } from "../types/porpsTypes";
-import customFetch from "../utils/axios";
-import { InstuctionsStep as Instruction } from "../types/types";
+import useFetchRecipeInstruction from "../hooks/useFetchRecipeInstruction";
 
 const RecipeInstructions = ({ recipeId }: Props) => {
-  const [instructions, setInstructions] = useState([] as Instruction[]);
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await customFetch.get(
-          `/recipes/${recipeId}/analyzedInstructions`
-        );
-        setInstructions(res.data[0].steps);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-
-    fetchData();
-  }, []);
+  const { instructions } = useFetchRecipeInstruction(recipeId);
 
   return (
     <article>

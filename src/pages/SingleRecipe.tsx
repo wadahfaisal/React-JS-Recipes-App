@@ -1,7 +1,4 @@
-import { Recipe } from "../types/types";
-import customFetch from "../utils/axios";
 import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
 import {
   Loading,
   RecipeContent,
@@ -9,27 +6,11 @@ import {
   // RecipeTags,
   RelatedRecipes,
 } from "../components";
+import useFetchSingleRecipe from "../hooks/useFetchSingleRecipe";
 
 const SingleRecipe: React.FC = () => {
   const { id } = useParams();
-  const [recipe, setRecipe] = useState({} as Recipe);
-  const [isLoading, setisLoading] = useState(false);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      setisLoading(true);
-      try {
-        const res = await customFetch.get(`/recipes/${id}/information`);
-        setRecipe(res.data);
-        setisLoading(false);
-      } catch (error) {
-        console.log(error);
-        setisLoading(false);
-      }
-    };
-
-    fetchData();
-  }, [id]);
+  const { recipe, isLoading } = useFetchSingleRecipe(id!);
 
   return (
     <main className="page recipe-page">

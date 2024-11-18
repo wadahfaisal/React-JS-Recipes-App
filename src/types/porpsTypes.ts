@@ -34,3 +34,9 @@ export type RecipeIngredientsProps = {
 export type RecipeInstructionsProps = {
   recipeId: string;
 };
+
+export type FormRowProps = {
+  labelText?: string;
+  name: string;
+  type: "text" | "email" | "text-area";
+};

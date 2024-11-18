@@ -14,6 +14,7 @@ import RelatedRecipes from "./RelatedRecipes";
 import RecipeHero from "./RecipeHero";
 import NavLinks from "./NavLinks";
 import Loading from "./Loading";
+import FormRow from "./FormRow";
 
 export {
   Navbar,
@@ -32,4 +33,5 @@ export {
   RecipeHero,
   NavLinks,
   Loading,
+  FormRow,
 };

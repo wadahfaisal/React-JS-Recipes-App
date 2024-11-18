@@ -1,26 +1,10 @@
-import { Tags, RecipesList } from "../components";
-import { useEffect, useState } from "react";
-import customFetch from "../utils/axios";
+import { Tags, RecipesList, Loading } from "../components";
+import useFetchRecipes from "../hooks/useFetchRecipes";
 
 const Recipes = () => {
-  const [recipes, setRecipes] = useState([]);
+  const { recipes, isLoading } = useFetchRecipes(12);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const numOfRecipes = 12;
-      try {
-        const res = await customFetch.get(
-          `/recipes/random?limitLicense=true&include-tags=vegetarian&number=${numOfRecipes}`
-        );
-
-        setRecipes(res.data.recipes);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-
-    fetchData();
-  }, []);
+  if (isLoading) return <Loading center />;
 
   return (
     <main className="page recipes-page">

@@ -10,7 +10,7 @@ const NavLinks = ({ showSidebar, setShowSidebar }: Props) => {
 
         if (text === "contact") {
           return (
-            <div className="nav-link contact-link">
+            <div className="nav-link contact-link" key={id}>
               <Link
                 to={target}
                 className="btn"
