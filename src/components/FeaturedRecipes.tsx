@@ -4,9 +4,7 @@ import useFetchRecipes from "../hooks/useFetchRecipes";
 const FeaturedRecipes = () => {
   const { recipes, isLoading } = useFetchRecipes(3);
 
-  if (isLoading) {
-    return <Loading center />;
-  }
+  if (isLoading) return <Loading center />;
 
   return (
     <section className="featured-recipes">
