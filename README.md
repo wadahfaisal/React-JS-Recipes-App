@@ -1,27 +1,11 @@
-# React + TypeScript + Vite
+# React.js Recipes Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Tech Stack**: React.js, SASS, Typescript, Spoonacular API, Netlify.
 
-Currently, two official plugins are available:
+## App Features:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- Developed a dynamic recipe discovery web application using React.js and TypeScript, ensuring scalable and type-safe code.
+- Integrated Spoonacular API to fetch real-time recipe data including ingredients, nutritional facts, and preparation steps.
+- Designed a responsive and visually appealing UI with SASS, delivering a seamless experience across all devices.
+- Optimized data fetching and component re-renders to enhance performance and reduce API call overhead.
+- Deployed app to production using Netlify.
