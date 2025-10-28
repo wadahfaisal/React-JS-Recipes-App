@@ -178,6 +178,7 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: inherit;
 }
 
 .loading {
@@ -189,6 +190,7 @@ ul {
   animation: spinner 0.6s linear infinite;
 }
 .loading-center {
+  @extend .loading;
   margin: 0 auto;
 }
 /* title */

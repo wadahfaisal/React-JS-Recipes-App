@@ -1,4 +1,6 @@
 main.recipes-page {
+  @extend .page;
+
   .recipes-container {
     display: grid;
     gap: 2rem 1rem;

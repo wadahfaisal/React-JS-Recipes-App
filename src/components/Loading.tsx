@@ -4,7 +4,7 @@ type Props = {
 const Loading = ({ center }: Props) => {
   return (
     <div className="loading-container">
-      <div className={center ? "loading loading-center" : "loading"}></div>
+      <div className={center ? "loading-center" : "loading"}></div>
     </div>
   );
 };
